@@ -49,3 +49,9 @@ The important Python pieces are in `main.py`:
 - Pydantic defines the shape of the speech-analysis request.
 - The `/api/analyze` route validates input, calls Gemini, and sends JSON back to the browser.
 - Static HTML, CSS, and JavaScript make the app feel like a real deployed product.
+
+## Session 4 Materials
+
+- [Windows build and Render guide](docs/session-4-python-render-guide.md)
+- [Codex prompts for Sean](docs/session-4-codex-prompts.md)
+- [Google Classroom post draft](docs/session-4-google-classroom-post.md)
