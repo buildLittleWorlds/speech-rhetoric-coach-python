@@ -8,14 +8,14 @@ Session 4: Build and Deploy a Python Speech Coach
 
 Today we reset the project into a professional Python web app.
 
-You do not need to start from a blank folder. Start by making your own copy of the example repo, then run it, deploy it, and improve it.
+You do not need to start from a blank folder. Start by clicking **Use this template** on the example repo, then run your new repo locally, deploy it, and improve it.
 
 You do not need GitHub CLI. Use GitHub in the browser and normal `git` commands in PowerShell.
 
 Your goal is to practice this workflow:
 
 ```text
-copy the starter repo -> run it locally -> save a change in GitHub -> deploy it on Render -> make one improvement
+use the template -> clone your new repo -> run it locally -> save a change in GitHub -> deploy it on Render -> make one improvement
 ```
 
 Do not commit API keys. Use `.env` locally and Render environment variables online.
@@ -48,7 +48,7 @@ Submit:
 The point of this session is not to make the most advanced speech evaluator yet. The point is to learn the complete professional loop from a beginner-friendly starter project:
 
 ```text
-starter repo -> local code -> GitHub -> deployed app -> test -> revise
+template repo -> local code -> GitHub -> deployed app -> test -> revise
 ```
 
 Audio and video analysis can come later. For now, text input keeps the project focused enough to finish and understand.

@@ -2,7 +2,7 @@
 
 This walkthrough uses:
 
-- **GitHub in the browser** for creating or copying the online repo.
+- **GitHub in the browser** for creating the online repo from a template.
 - **Git in PowerShell** for local commands.
 
 It does **not** use the GitHub CLI command `gh`.
@@ -15,7 +15,9 @@ It does **not** use the GitHub CLI command `gh`.
 
 **GitHub CLI (`gh`)** is an optional extra tool. We are not using it.
 
-## Part A: Shawn's Path, Starting from the Starter Repo
+**Template repo** means a starter repo that GitHub can copy into a brand-new repo for you.
+
+## Part A: Create Your Repo from the Template
 
 ### In GitHub, in the browser
 
@@ -25,25 +27,37 @@ It does **not** use the GitHub CLI command `gh`.
    https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
    ```
 
-2. Click **Fork**.
+2. Click **Use this template**.
 
-3. GitHub will create a copy under your account.
+3. Click **Create a new repository**.
 
-4. Your new repo URL should look like:
+4. Repository name:
+
+   ```text
+   speech-rhetoric-coach-python
+   ```
+
+5. Choose **Public**.
+
+6. Click **Create repository**.
+
+7. Your new repo URL should look like:
 
    ```text
    https://github.com/YOUR_USERNAME/speech-rhetoric-coach-python
    ```
 
-5. Click the green **Code** button.
+8. Click the green **Code** button.
 
-6. Copy the HTTPS clone URL. It should look like:
+9. Copy the HTTPS clone URL. It should look like:
 
    ```text
    https://github.com/YOUR_USERNAME/speech-rhetoric-coach-python.git
    ```
 
-### In PowerShell, locally
+## Part B: Download Your Repo Locally
+
+### In PowerShell
 
 Go to the folder where you keep coding projects:
 
@@ -75,92 +89,6 @@ Now you have:
 - a matching project folder on your computer,
 - a connection between the two.
 
-## Part B: Instructor Demo Path, If You Cannot Fork Your Own Repo
-
-GitHub may not let you fork your own repo into the same account. To demonstrate the full process anyway, make a fresh copy manually.
-
-### In PowerShell, locally
-
-Start somewhere clean:
-
-```powershell
-cd $HOME\Documents
-```
-
-Download the starter repo into a new folder:
-
-```powershell
-git clone https://github.com/buildLittleWorlds/speech-rhetoric-coach-python.git speech-rhetoric-coach-demo-walkthrough
-```
-
-Move into the new folder:
-
-```powershell
-cd speech-rhetoric-coach-demo-walkthrough
-```
-
-Remove the old Git history so this becomes a fresh project:
-
-```powershell
-Remove-Item -Recurse -Force .git
-```
-
-Start a new Git history:
-
-```powershell
-git init
-git add .
-git commit -m "Start from Python speech coach starter"
-```
-
-### In GitHub, in the browser
-
-1. Go to:
-
-   ```text
-   https://github.com/new
-   ```
-
-2. Repository name:
-
-   ```text
-   speech-rhetoric-coach-demo-walkthrough
-   ```
-
-3. Choose **Public**.
-
-4. Do **not** add a README, `.gitignore`, or license.
-
-5. Click **Create repository**.
-
-6. GitHub will show setup commands. You only need the repo URL, which will look like:
-
-   ```text
-   https://github.com/YOUR_USERNAME/speech-rhetoric-coach-demo-walkthrough.git
-   ```
-
-### Back in PowerShell, locally
-
-Connect your local folder to the empty GitHub repo:
-
-```powershell
-git remote add origin https://github.com/YOUR_USERNAME/speech-rhetoric-coach-demo-walkthrough.git
-```
-
-Rename the branch to `main`:
-
-```powershell
-git branch -M main
-```
-
-Push your code to GitHub:
-
-```powershell
-git push -u origin main
-```
-
-Now refresh the GitHub page. Your files should appear.
-
 ## Part C: Run the App Locally
 
 Create a virtual environment:
@@ -170,6 +98,18 @@ py -3 -m venv .venv
 ```
 
 Activate it:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+If PowerShell blocks activation, run:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+Then try activation again:
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
@@ -272,6 +212,16 @@ Refresh GitHub in the browser. Your commit should appear.
 7. Deploy.
 
 Render will give you a public URL. Test the same sample speech there.
+
+## Instructor Demo Note
+
+Because the starter repo is now a GitHub template, the instructor can use the exact same path:
+
+```text
+Use this template -> create a new repo -> clone it -> run it -> deploy it
+```
+
+No manual copying, deleting `.git`, or GitHub CLI is needed.
 
 ## Safe Rule
 

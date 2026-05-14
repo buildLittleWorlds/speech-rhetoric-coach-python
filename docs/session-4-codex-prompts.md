@@ -8,19 +8,20 @@ You do not have to use all of them. Pick the one that matches where you are stuc
 
 ```text
 I am new to GitHub, FastAPI, and deployment. Explain this project to me slowly.
-What is a repo? What is a fork? What is a clone? What does each file in this
-speech-rhetoric-coach-python project do? Keep the explanation beginner-friendly.
+What is a repo? What is a template repo? What is cloning? What does each file
+in this speech-rhetoric-coach-python project do? Keep the explanation
+beginner-friendly.
 ```
 
-## Prompt 1: Help Me Fork and Clone
+## Prompt 1: Help Me Use the Template and Clone
 
 ```text
 Help me make my own copy of this starter repo:
 https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
 
-Explain the difference between forking and cloning. Then give me Windows
-PowerShell commands for cloning my fork onto my computer. Do not use GitHub
-CLI or the gh command. Do not assume I already know GitHub.
+Explain how to use the "Use this template" button in GitHub. Then give me
+Windows PowerShell commands for cloning my new repo onto my computer. Do not
+use GitHub CLI or the gh command. Do not assume I already know GitHub.
 ```
 
 ## Prompt 2: Set Up Python Locally

@@ -5,7 +5,7 @@ Today you are starting from a working example and turning it into your own Pytho
 You do **not** need to understand every command before you start. The goal is to learn the workflow by doing it slowly:
 
 ```text
-copy a starter project -> run it on your computer -> save it in GitHub -> deploy it on Render -> make one improvement
+create a repo from the template -> run it on your computer -> save a change in GitHub -> deploy it on Render -> make one improvement
 ```
 
 Instructor example repo:
@@ -18,7 +18,9 @@ https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
 
 **GitHub repo**: A project folder saved online. It stores your code and its history.
 
-**Fork**: A button on GitHub that makes your own copy of someone else's repo.
+**Template repo**: A starter project on GitHub that can be copied into a brand-new repo.
+
+**Use this template**: A GitHub button that creates your own new repo from a starter project.
 
 **Clone**: Download a GitHub repo onto your computer so you can edit it.
 
@@ -65,7 +67,7 @@ https://aistudio.google.com/apikey
 
 Important: do not share your API key. Do not paste it into GitHub.
 
-## Step 1: Make Your Own Copy on GitHub
+## Step 1: Create Your Own Repo from the Template
 
 Open the starter repo:
 
@@ -73,9 +75,11 @@ Open the starter repo:
 https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
 ```
 
-Click **Fork**.
+Click **Use this template**.
 
-That creates your own copy of the project under your GitHub account.
+Then click **Create a new repository**.
+
+That creates your own new repo under your GitHub account, using the starter code.
 
 If GitHub asks for a name, use:
 
@@ -83,7 +87,7 @@ If GitHub asks for a name, use:
 speech-rhetoric-coach-python
 ```
 
-After the fork is created, you should be on a page like:
+After the repo is created, you should be on a page like:
 
 ```text
 https://github.com/YOUR_USERNAME/speech-rhetoric-coach-python
@@ -91,7 +95,7 @@ https://github.com/YOUR_USERNAME/speech-rhetoric-coach-python
 
 ## Step 2: Download Your Copy to Your Computer
 
-On your forked GitHub repo, click the green **Code** button.
+On your new GitHub repo, click the green **Code** button.
 
 Copy the HTTPS URL. It should look like:
 
@@ -255,7 +259,7 @@ https://render.com
 
 Create a new **Web Service** from your GitHub repo.
 
-Choose your forked repo:
+Choose your repo:
 
 ```text
 YOUR_USERNAME/speech-rhetoric-coach-python
