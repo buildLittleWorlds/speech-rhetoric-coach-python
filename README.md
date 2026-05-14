@@ -53,5 +53,6 @@ The important Python pieces are in `main.py`:
 ## Session 4 Materials
 
 - [Windows build and Render guide](docs/session-4-python-render-guide.md)
+- [GitHub without GitHub CLI walkthrough](docs/session-4-no-github-cli-walkthrough.md)
 - [Codex prompts for Shawn](docs/session-4-codex-prompts.md)
 - [Google Classroom post draft](docs/session-4-google-classroom-post.md)

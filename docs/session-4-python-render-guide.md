@@ -55,6 +55,8 @@ Make sure you have:
 - Render account
 - Gemini API key from Google AI Studio
 
+You do **not** need GitHub CLI. You will use GitHub in the browser and normal `git` commands in PowerShell.
+
 Get a Gemini API key here:
 
 ```text

@@ -10,6 +10,8 @@ Today we reset the project into a professional Python web app.
 
 You do not need to start from a blank folder. Start by making your own copy of the example repo, then run it, deploy it, and improve it.
 
+You do not need GitHub CLI. Use GitHub in the browser and normal `git` commands in PowerShell.
+
 Your goal is to practice this workflow:
 
 ```text
@@ -23,6 +25,7 @@ When you finish, submit your own GitHub repo link, your Render app link, and a s
 ## Attach or Link
 
 - `session-4-python-render-guide.md`
+- `session-4-no-github-cli-walkthrough.md`
 - `session-4-codex-prompts.md`
 - Starter GitHub repo: https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
 - Daniel's finished Render app link: add after Render environment variables are set and the first deploy finishes

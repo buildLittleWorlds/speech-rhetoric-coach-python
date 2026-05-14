@@ -19,8 +19,8 @@ Help me make my own copy of this starter repo:
 https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
 
 Explain the difference between forking and cloning. Then give me Windows
-PowerShell commands for cloning my fork onto my computer. Do not assume I
-already know GitHub.
+PowerShell commands for cloning my fork onto my computer. Do not use GitHub
+CLI or the gh command. Do not assume I already know GitHub.
 ```
 
 ## Prompt 2: Set Up Python Locally
