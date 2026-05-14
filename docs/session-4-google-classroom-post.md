@@ -8,31 +8,31 @@ Session 4: Build and Deploy a Python Speech Coach
 
 Today we reset the project into a professional Python web app.
 
-Your goal is to reproduce the same workflow on your own machine:
+You do not need to start from a blank folder. Start by making your own copy of the example repo, then run it, deploy it, and improve it.
 
-- local FastAPI app,
-- GitHub repo,
-- Render deployment,
-- Gemini API key,
-- one styling or critique improvement.
+Your goal is to practice this workflow:
+
+```text
+copy the starter repo -> run it locally -> save a change in GitHub -> deploy it on Render -> make one improvement
+```
 
 Do not commit API keys. Use `.env` locally and Render environment variables online.
 
-When you finish, submit your GitHub repo link, Render app link, and a short note about one styling or critique improvement you made.
+When you finish, submit your own GitHub repo link, your Render app link, and a short note about one styling or critique improvement you made.
 
 ## Attach or Link
 
 - `session-4-python-render-guide.md`
 - `session-4-codex-prompts.md`
-- Daniel's finished GitHub repo: https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
+- Starter GitHub repo: https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
 - Daniel's finished Render app link: add after Render environment variables are set and the first deploy finishes
 
 ## Student Deliverables
 
 Submit:
 
-1. GitHub repo URL
-2. Render app URL
+1. Your GitHub repo URL
+2. Your Render app URL
 3. Screenshot of the app running locally or deployed
 4. Short reflection:
    - What part was Python?
@@ -42,10 +42,10 @@ Submit:
 
 ## Instructor Note
 
-The point of this session is not to make the most advanced speech evaluator yet. The point is to learn the complete professional loop:
+The point of this session is not to make the most advanced speech evaluator yet. The point is to learn the complete professional loop from a beginner-friendly starter project:
 
 ```text
-local code -> GitHub -> deployed app -> test -> revise
+starter repo -> local code -> GitHub -> deployed app -> test -> revise
 ```
 
 Audio and video analysis can come later. For now, text input keeps the project focused enough to finish and understand.

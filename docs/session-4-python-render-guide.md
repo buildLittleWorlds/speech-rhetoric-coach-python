@@ -1,19 +1,36 @@
 # Session 4: Build and Deploy a Python Speech Coach
 
-Today you are rebuilding the project as a real Python web app.
+Today you are starting from a working example and turning it into your own Python web app.
 
-The goal is not just to make something run once. The goal is to learn the professional workflow:
+You do **not** need to understand every command before you start. The goal is to learn the workflow by doing it slowly:
 
-1. Build the app on your computer.
-2. Save it in GitHub.
-3. Deploy it online with Render.
-4. Improve the styling and critique quality.
+```text
+copy a starter project -> run it on your computer -> save it in GitHub -> deploy it on Render -> make one improvement
+```
 
 Instructor example repo:
 
 ```text
 https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
 ```
+
+## What These Words Mean
+
+**GitHub repo**: A project folder saved online. It stores your code and its history.
+
+**Fork**: A button on GitHub that makes your own copy of someone else's repo.
+
+**Clone**: Download a GitHub repo onto your computer so you can edit it.
+
+**Commit**: Save a checkpoint of your code.
+
+**Push**: Send your local commits back up to GitHub.
+
+**Render**: A website that can run your app online.
+
+**Environment variable**: A secret setting, such as an API key, that your app can read without putting the secret directly in code.
+
+**`.env` file**: A local-only file where you store secrets on your computer. This file should never be uploaded to GitHub.
 
 ## What You Are Building
 
@@ -24,11 +41,11 @@ You will build a FastAPI app that:
 - sends the speech to Gemini from a Python backend,
 - returns a rhetorical critique with audience-fit feedback and revision moves.
 
-This is a Python-first project. HTML, CSS, and JavaScript make the interface feel polished, but Python is the center of the app.
+This is a Python-first project. HTML, CSS, and JavaScript make the page look polished, but Python is the center of the app.
 
-## Install Checklist
+## What You Need
 
-Make sure you have these before starting:
+Make sure you have:
 
 - Python 3.12 or newer
 - Git
@@ -44,27 +61,69 @@ Get a Gemini API key here:
 https://aistudio.google.com/apikey
 ```
 
-Do not share your API key. Do not paste it into GitHub.
+Important: do not share your API key. Do not paste it into GitHub.
 
-## Step 1: Create Your Project Folder
+## Step 1: Make Your Own Copy on GitHub
 
-Open PowerShell and choose where you keep coding projects.
+Open the starter repo:
 
-Example:
+```text
+https://github.com/buildLittleWorlds/speech-rhetoric-coach-python
+```
+
+Click **Fork**.
+
+That creates your own copy of the project under your GitHub account.
+
+If GitHub asks for a name, use:
+
+```text
+speech-rhetoric-coach-python
+```
+
+After the fork is created, you should be on a page like:
+
+```text
+https://github.com/YOUR_USERNAME/speech-rhetoric-coach-python
+```
+
+## Step 2: Download Your Copy to Your Computer
+
+On your forked GitHub repo, click the green **Code** button.
+
+Copy the HTTPS URL. It should look like:
+
+```text
+https://github.com/YOUR_USERNAME/speech-rhetoric-coach-python.git
+```
+
+Open PowerShell and go to the place where you keep coding projects:
 
 ```powershell
 cd $HOME\Documents
-mkdir speech-rhetoric-coach-python
+```
+
+Download the repo:
+
+```powershell
+git clone https://github.com/YOUR_USERNAME/speech-rhetoric-coach-python.git
+```
+
+Move into the project folder:
+
+```powershell
 cd speech-rhetoric-coach-python
 ```
 
-Open the folder in your editor:
+Open it in your editor:
 
 ```powershell
 code .
 ```
 
-## Step 2: Create a Virtual Environment
+## Step 3: Create a Python Virtual Environment
+
+A virtual environment is a private Python toolbox for this one project.
 
 In PowerShell:
 
@@ -79,7 +138,7 @@ If PowerShell blocks activation, run:
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```
 
-Then try activation again:
+Then try again:
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
@@ -87,126 +146,104 @@ Then try activation again:
 
 You should see `(.venv)` at the start of your terminal line.
 
-## Step 3: Install Requirements
+## Step 4: Install the Python Packages
 
-Create a file named `requirements.txt` with:
+The project already has a file named `requirements.txt`. It lists the Python packages the app needs.
 
-```text
-fastapi
-google-genai
-jinja2
-python-dotenv
-uvicorn[standard]
-```
-
-Then run:
+Install them:
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-## Step 4: Add Your Secret Key Locally
+If this works, you have installed FastAPI, Gemini, and the other project tools.
 
-Create a file named `.env`.
+## Step 5: Add Your Gemini API Key Locally
 
-Put this inside it:
+The repo includes `.env.example`, which is a safe example file.
+
+Make your own private `.env` file:
+
+```powershell
+copy .env.example .env
+```
+
+Open `.env` in your editor and replace `your_key_here` with your real Gemini API key:
 
 ```text
 GEMINI_API_KEY=your_real_key_here
 ```
 
-Replace `your_real_key_here` with your actual Gemini API key.
+Do not commit `.env`. It is already listed in `.gitignore`, which tells Git to ignore it.
 
-Also create `.gitignore`:
-
-```text
-.env
-.venv/
-__pycache__/
-*.pyc
-```
-
-This keeps your secret key out of GitHub.
-
-## Step 5: Build the App
-
-Your project should have this structure:
-
-```text
-speech-rhetoric-coach-python/
-  main.py
-  requirements.txt
-  .env
-  .gitignore
-  templates/
-    index.html
-  static/
-    styles.css
-    app.js
-```
-
-Use Codex to help create these files. A good prompt is:
-
-```text
-Build a FastAPI app for a rhetorical speech coach. It should have main.py,
-templates/index.html, static/styles.css, and static/app.js. The user should
-paste a speech, enter an audience, occasion, and goal, and the Python backend
-should call Gemini using GEMINI_API_KEY from .env. Return audience-fit score,
-what connects, risks, ethos/pathos/logos notes, and three revision moves.
-Do not put the API key in code.
-```
-
-## Step 6: Run Locally
-
-In PowerShell, with your virtual environment active:
-
-```powershell
-uvicorn main:app --reload
-```
-
-Open:
-
-```text
-http://127.0.0.1:8000
-```
-
-Test the app with a short speech.
-
-## Step 7: Save to GitHub
-
-In PowerShell:
-
-```powershell
-git init
-git add .
-git commit -m "Initial Python speech coach app"
-```
-
-Create a new GitHub repo named:
-
-```text
-speech-rhetoric-coach-python
-```
-
-Then follow GitHub's commands to connect your local folder and push.
-
-It will look something like this:
-
-```powershell
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/speech-rhetoric-coach-python.git
-git push -u origin main
-```
-
-Before pushing, check that `.env` is not included:
+Check:
 
 ```powershell
 git status
 ```
 
-If `.env` appears, stop and fix `.gitignore`.
+If `.env` appears in the list, stop and ask for help.
 
-## Step 8: Deploy on Render
+## Step 6: Run the App on Your Computer
+
+With the virtual environment active, run:
+
+```powershell
+uvicorn main:app --reload
+```
+
+Open this in your browser:
+
+```text
+http://127.0.0.1:8000
+```
+
+Try the sample speech. If it returns a critique, the local app is working.
+
+## Step 7: Understand the Project Files
+
+You do not need to memorize everything, but you should know what each part does:
+
+```text
+main.py                  Python backend and Gemini call
+templates/index.html     Web page structure
+static/styles.css        Visual design
+static/app.js            Browser behavior and loading state
+requirements.txt         Python packages
+.env                     Your private local API key, not uploaded
+.env.example             Safe example of the secret file
+render.yaml              Render deployment settings
+```
+
+The most important Python file is:
+
+```text
+main.py
+```
+
+That is where FastAPI receives the speech, checks the inputs, calls Gemini, and sends the critique back to the browser.
+
+## Step 8: Save a Small Change to GitHub
+
+Make one small change first. For example, change the heading in `templates/index.html` or adjust one color in `static/styles.css`.
+
+Then save a checkpoint:
+
+```powershell
+git status
+git add .
+git commit -m "Customize speech coach app"
+git push
+```
+
+What happened:
+
+- `git status` shows what changed.
+- `git add .` chooses the changed files.
+- `git commit` saves a checkpoint.
+- `git push` sends the checkpoint to GitHub.
+
+## Step 9: Deploy on Render
 
 Go to:
 
@@ -214,7 +251,13 @@ Go to:
 https://render.com
 ```
 
-Create a new Web Service from your GitHub repo.
+Create a new **Web Service** from your GitHub repo.
+
+Choose your forked repo:
+
+```text
+YOUR_USERNAME/speech-rhetoric-coach-python
+```
 
 Use these settings:
 
@@ -226,45 +269,101 @@ Start command:
 uvicorn main:app --host 0.0.0.0 --port $PORT
 ```
 
-Add an environment variable:
+Add this environment variable in Render:
 
 ```text
 GEMINI_API_KEY = your_real_key_here
 ```
 
-Deploy the app. Render will give you a public URL ending in:
+Render will give you a public URL ending in:
 
 ```text
 .onrender.com
 ```
 
+Open the URL and test the app.
+
+## Step 10: Make One Real Improvement
+
+Choose one:
+
+- improve the styling,
+- improve the prompt in `main.py`,
+- add a new critique category,
+- change the sample speech,
+- make the error message clearer,
+- make the output easier to read.
+
+After you make the change:
+
+```powershell
+git add .
+git commit -m "Improve speech coach app"
+git push
+```
+
+Render should redeploy from GitHub.
+
 ## Troubleshooting
 
-### Missing API Key
+### I Do Not Know If I Am in the Right Folder
 
-If the app says `GEMINI_API_KEY is missing`, then either:
+Run:
 
-- `.env` is missing locally,
-- the key name is misspelled,
-- or Render does not have the environment variable set.
+```powershell
+dir
+```
 
-### ModuleNotFoundError
+You should see files like:
 
-If Python says a package is missing:
+```text
+main.py
+requirements.txt
+templates
+static
+```
+
+### My Virtual Environment Is Not Active
+
+Run:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+You should see `(.venv)` at the start of the terminal line.
+
+### A Package Is Missing
+
+Run:
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-Make sure your virtual environment is active first.
+### The App Says `GEMINI_API_KEY is missing`
 
-### Render Works Slowly at First
+Check:
+
+- Did you create `.env`?
+- Is the key name exactly `GEMINI_API_KEY`?
+- Did you add the key to Render too?
+
+Local `.env` files do not upload to Render.
+
+### Render Is Slow at First
 
 Free Render apps may sleep when nobody uses them. The first visit after a pause can be slow. That is normal.
 
-### Local Works, Render Fails
+### I Am Worried About My API Key
 
-Most likely Render does not have `GEMINI_API_KEY` set. Local `.env` files do not upload to Render.
+Run:
+
+```powershell
+git status
+```
+
+If `.env` appears, stop. Do not commit. Ask for help.
 
 ### Privacy
 
@@ -277,4 +376,8 @@ Submit:
 - your GitHub repo link,
 - your Render app link,
 - a screenshot of the app,
-- one short note about what broke or what you improved.
+- one short reflection:
+  - What part was Python?
+  - What part was deployment?
+  - What broke?
+  - What did you improve?
