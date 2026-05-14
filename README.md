@@ -1,6 +1,6 @@
 # Rhetorical Speech Coach
 
-A Python-first web app for Session 4 with Sean: FastAPI, Gemini, GitHub, and Render.
+A Python-first web app for Session 4 with Shawn: FastAPI, Gemini, GitHub, and Render.
 
 The app lets a user paste a 1-3 paragraph speech, name the intended audience, and receive a rhetorical critique focused on audience connection, persuasion, clarity, and revision moves.
 
@@ -53,5 +53,5 @@ The important Python pieces are in `main.py`:
 ## Session 4 Materials
 
 - [Windows build and Render guide](docs/session-4-python-render-guide.md)
-- [Codex prompts for Sean](docs/session-4-codex-prompts.md)
+- [Codex prompts for Shawn](docs/session-4-codex-prompts.md)
 - [Google Classroom post draft](docs/session-4-google-classroom-post.md)
